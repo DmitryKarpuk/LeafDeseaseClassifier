@@ -1,0 +1,7 @@
+lr_tl: 0.01
+lr_ft: 0.0001
+drop_rate: 0
+inner_size: 224
+n_epoch: 1
+fine_tune: False
+augmentation: False
