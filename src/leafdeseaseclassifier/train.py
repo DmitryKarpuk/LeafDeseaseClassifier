@@ -95,3 +95,6 @@ def train(
         model.fit(train_ds, epochs=params['n_epoch'])
     model.save(model_path)
     click.echo(click.style("Model was successful saved.", fg="green"))
+
+    if __name__ == '__main__':
+        train()
