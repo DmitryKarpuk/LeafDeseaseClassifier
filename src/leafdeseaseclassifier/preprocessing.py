@@ -23,7 +23,6 @@ def get_dataset(image_path: Path,
         
     meta_df = pd.read_csv(metadata_path)
     meta_df['image_path'] = str(image_path)+'/'+ meta_df['image_id'] + '.jpg'
-    meta_df.to_csv('data/meta.csv')
     simple_gen = ImageDataGenerator(preprocessing_function=preprocess_input)
     aug_gen = ImageDataGenerator(preprocessing_function=preprocess_input,
                                 rotation_range=40,
