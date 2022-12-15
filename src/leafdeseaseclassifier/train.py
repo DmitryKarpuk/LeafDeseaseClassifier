@@ -64,7 +64,7 @@ def train(
     params = yaml.safe_load(param_path.read_text())
     size = (params['inner_size'], params['inner_size'], 3)
     augmentation = params['augmentation']
-    train_ds = get_dataset(image_path, metadata_path, augmentation)
+    train_ds = get_dataset(image_path, metadata_path, augmentation, mode='train')
     # Create base model
     base_model = ResNet50(weights='imagenet', input_shape=size, include_top=False)
     base_model.trainable = False
