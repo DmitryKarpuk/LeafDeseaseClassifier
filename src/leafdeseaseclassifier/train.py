@@ -5,7 +5,7 @@ import numpy as np
 import yaml
 import tensorflow as tf
 from tensorflow import keras
-from .preprocessing import get_dataset
+from preprocessing import get_dataset
 from tensorflow.keras.applications.resnet50  import ResNet50
 import warnings
 
@@ -15,6 +15,7 @@ SEED = 2007
 
 np.random.seed(SEED)
 tf.keras.utils.set_random_seed(SEED)
+
 
 @click.command()
 @click.option(
@@ -32,7 +33,7 @@ tf.keras.utils.set_random_seed(SEED)
 @click.option(
     "-m",
     "--model-path",
-    default="models/model.h5",
+    default="models/simple_model.h5",
     type=click.Path(writable=True, dir_okay=False, path_type=Path),
 )
 @click.option(
@@ -81,6 +82,7 @@ def train(
                   loss=keras.losses.CategoricalCrossentropy(),
                   metrics=[keras.metrics.CategoricalAccuracy()],
                   )
+    print("Compile done")
     model.fit(train_ds, epochs=params['n_epoch'])
     if params['fine_tune']:
         print('====== Strart fine-tuning ======')
@@ -96,5 +98,5 @@ def train(
     model.save(model_path)
     click.echo(click.style("Model was successful saved.", fg="green"))
 
-    if __name__ == '__main__':
-        train()
+if __name__ == '__main__':
+    train()

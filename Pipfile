@@ -8,6 +8,9 @@ numpy = "*"
 pandas = "*"
 click = "*"
 pyyaml = "*"
+tensorflow = "*"
+pillow = "*"
+scipy = "*"
 
 [dev-packages]
 

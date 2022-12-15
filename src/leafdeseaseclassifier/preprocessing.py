@@ -1,8 +1,9 @@
 import pandas as pd
 import numpy as np
 from pathlib import Path
+import tensorflow as tf
 from tensorflow.keras.applications.resnet50 import preprocess_input
-from tensorflow.keras.preprocessing.image import ImageDataGenerator, DataFrameIterator
+from tensorflow.keras.preprocessing.image import ImageDataGenerator, Iterator
 
 
 SEED = 2007
@@ -10,16 +11,16 @@ BATCH_SIZE = 64
 TARGET = ['healthy', 'multiple_diseases',	'rust',	'scab']
 
 np.random.seed(SEED)
-tensorflow.keras.utils.set_random_seed(SEED)
+tf.keras.utils.set_random_seed(SEED)
 
 
 def get_dataset(image_path: Path,
                 metadata_path: Path,
-                augmentation: bool) -> DataFrameIterator:
+                augmentation: bool) -> Iterator:
 
     meta_df = pd.read_csv(metadata_path)
-    meta_df['image_path'] = str(image_path) + meta_df['image_id'] + '.jpg'
-    
+    meta_df['image_path'] = str(image_path)+'/'+ meta_df['image_id'] + '.jpg'
+    meta_df.to_csv('data/meta.csv')
     if augmentation:
         train_gen = ImageDataGenerator(preprocessing_function=preprocess_input,
                                         rotation_range=40,
@@ -38,10 +39,6 @@ def get_dataset(image_path: Path,
                                             batch_size=BATCH_SIZE,
                                             seed=SEED)
     return train_ds
-
-
-
-
 
 
 
