@@ -11,6 +11,7 @@ pyyaml = "*"
 tensorflow = "*"
 pillow = "*"
 scipy = "*"
+flask = "*"
 
 [dev-packages]
 black = "*"
