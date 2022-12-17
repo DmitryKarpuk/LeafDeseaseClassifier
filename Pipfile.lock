@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "4e51ab238cfce4ed46376a01b7c38ef53acd26c8d9a35d865d78d9c71eacd713"
+            "sha256": "8073975ab21732539405617095ca012bf80a61ecd78543ca7626576e7b78b830"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -166,8 +166,16 @@
                 "sha256:f96ace1540223f26fbe7c4ebbf8a98e3929a6aa0290c8033d12526847b291c0f",
                 "sha256:fbdbe9a849854fe484c00823f45b7baab159bdd4a46075302281998cb8719df5"
             ],
-            "markers": "python_version >= '3.7'",
+            "index": "pypi",
             "version": "==1.51.1"
+        },
+        "gunicorn": {
+            "hashes": [
+                "sha256:9dcc4547dbb1cb284accfb15ab5667a0e5d1881cc443e0677b4882a4067a807e",
+                "sha256:e0a968b5ba15f8a328fdfd7ab1fcb5af4470c28aaf7e55df02a99bc13138e6e8"
+            ],
+            "index": "pypi",
+            "version": "==20.1.0"
         },
         "h5py": {
             "hashes": [
@@ -737,6 +745,14 @@
             ],
             "markers": "platform_machine != 'arm64' or platform_system != 'Darwin'",
             "version": "==0.28.0"
+        },
+        "tensorflow-protobuf": {
+            "hashes": [
+                "sha256:3b4ddf9c468160e2fa97130d9a3d46b182dfdd6f3c2fcb95ad7ff9d549b2dd0d",
+                "sha256:89073a618c3439ac75051621158f2de5d401ed3a683a4d86a68882c35a9f51d3"
+            ],
+            "index": "pypi",
+            "version": "==2.7.0"
         },
         "termcolor": {
             "hashes": [

@@ -5,20 +5,11 @@ name = "pypi"
 
 [packages]
 numpy = "*"
-pandas = "*"
-click = "*"
-pyyaml = "*"
-tensorflow = "*"
 pillow = "*"
-scipy = "*"
 flask = "*"
 grpcio = "*"
-gunicorn = "*"
 tensorflow-protobuf = "==2.7.0"
-
-[dev-packages]
-black = "*"
-flake8 = "*"
+gunicorn = "*"
 
 [requires]
 python_version = "3.9"
