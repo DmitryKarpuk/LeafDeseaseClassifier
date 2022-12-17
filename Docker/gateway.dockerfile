@@ -12,4 +12,4 @@ COPY ["./src/serve/gateway.py", "./src/serve/proto.py", "./"]
 
 EXPOSE 9696
 
-ENTRYPOINT ["gunicorn", "--bind=0.0.0.0:9696", "gateway:app"] 
+ENTRYPOINT ["gunicorn", "--bind", "0.0.0.0:9696", "gateway:app"] 

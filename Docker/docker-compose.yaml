@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  leafdiseas-model:
+    image: leafdiseas-model:resnet50-v1
+  gateway:
+    image: resnet-gateway:001
+    environment:
+      - TF_SERVING_HOST=leafdiseas-model:8500
+    ports:
+      - "9696:9696"
