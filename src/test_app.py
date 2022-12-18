@@ -1,8 +1,25 @@
 import requests
+import click
+
 
 URL = "http://localhost:9696/predict"
 
-data = {'url': 'https://cid-inc.com/app/uploads/2020/10/leaf_area.jpg'}
 
-result = requests.post(URL, json=data).json()
-print(result)
+@click.command(help="Script with request for testing model app.")
+@click.option(
+    "-u",
+    "--url",
+    default="'https://cid-inc.com/app/uploads/2020/10/leaf_area.jpg'",
+    type=str,
+)
+def predict_req(url: str) -> None:
+    """
+    Test tensorflow learning service on url using url of leaf image.
+    Args:
+        url: Url of file with leaf image.
+    Return:
+        Probabilities of leaf state.
+    """
+    data = {"url": url}
+    result = requests.post(URL, json=data).json()
+    print(result)

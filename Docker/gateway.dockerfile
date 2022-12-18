@@ -4,11 +4,11 @@ RUN pip --no-cache-dir install pipenv
 
 WORKDIR /app
 
-COPY ["./src/serve/Pipfile","./src/serve/Pipfile.lock","./"]
+COPY ["./src/service/Pipfile","./src/service/Pipfile.lock","./"]
 
 RUN pipenv install --deploy --system
 
-COPY ["./src/serve/gateway.py", "./src/serve/proto.py", "./"]
+COPY ["./src/service/gateway.py", "./src/service/proto.py", "./"]
 
 EXPOSE 9696
 
