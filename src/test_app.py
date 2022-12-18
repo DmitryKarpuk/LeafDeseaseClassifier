@@ -9,17 +9,21 @@ URL = "http://localhost:9696/predict"
 @click.option(
     "-u",
     "--url",
-    default="'https://cid-inc.com/app/uploads/2020/10/leaf_area.jpg'",
+    default="https://cid-inc.com/app/uploads/2020/10/leaf_area.jpg",
     type=str,
 )
 def predict_req(url: str) -> None:
     """
     Test tensorflow learning service on url using url of leaf image.
     Args:
-        url: Url of file with leaf image.
+        url: Url of leaf image.
     Return:
         Probabilities of leaf state.
     """
-    data = {"url": url}
+    data = {'url': url}
+
     result = requests.post(URL, json=data).json()
     print(result)
+
+if __name__ == '__main__':
+    predict_req()

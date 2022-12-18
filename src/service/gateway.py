@@ -59,9 +59,9 @@ classes = ["healthy", "multiple_diseases", "rust", "scab"]
 
 def prepare_response(pb_response):
     preds = pb_response.outputs["dense"].float_val
-    pred_class = classes[np.argmax(preds)]
-    # return dict(zip(classes, preds))
-    return pred_class
+    # pred_class = classes[np.argmax(preds)]
+    return dict(zip(classes, preds))
+    # return pred_class
 
 
 def predict(url):
@@ -86,5 +86,5 @@ def predict_endpoint():
 if __name__ == "__main__":
     # url = 'https://cid-inc.com/app/uploads/2020/10/leaf_area.jpg'
     # response = predict(url)
-    # print(f'This is {response}.')
+    # print(response)
     app.run(debug=True, host="0.0.0.0", port=9696)

@@ -17,6 +17,17 @@ tf.keras.utils.set_random_seed(SEED)
 def get_dataset(
     image_path: Path, metadata_path: Path, augmentation: bool, mode: str
 ) -> Iterator:
+    """
+    Convert images into tensorflow dataset.
+    Args:
+        image_path: Path of folder with data of plant.
+        metadata-path: Path of file with information about images.
+        augmentation: Apply augmentation,
+        mode: Mode of generator, train or test.
+    Return:
+        Iterator of dataset.
+    """
+
     if mode not in ["train", "test"]:
         raise KeyError("Mode should be train or test")
 

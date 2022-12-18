@@ -49,7 +49,7 @@ def train(
     Save trained model to .h5 file.
 
     Args:
-        image_path: Path of folder with data of plant.
+        image_path: Path of folder with images of plant.
         metadata-path: Path of file with information about images.
         model_path: Path of model file.
         param-path: Path of file with train parameters.
