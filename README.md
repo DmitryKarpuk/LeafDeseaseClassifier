@@ -58,7 +58,9 @@ pipenv run python src/predict.py -i <path to folder with images> -d <path to csv
 ## Model service.
 
 Model has been deploymented  by flask for gateway and tenserflow servicing for model. One way to create a WSGI server is to use gunicorn. This project was packed in a Docker containers using Docker-Compose, you're able to run project on any machine.
-In order to run service install docker-compose.
+
+In order to run service you have to download and unzip my pretrainde model via [link](https://drive.google.com/drive/folders/1d8YC3mI_gsfOaQ6ao_CAJRBDgKBYeSMo?usp=share_link) (models are too large for gitgub).
+
 Then build images for gateway and model.
 ```
 docker build -t resnet-gateway:001 -f Docker/gateway.dockerfile .

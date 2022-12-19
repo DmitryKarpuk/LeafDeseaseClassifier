@@ -23,7 +23,7 @@ def predict_req(url: str) -> None:
     data = {'url': url}
 
     result = requests.post(URL, json=data).json()
-    print(result)
+    click.echo(click.style(result, fg="green"))
 
 if __name__ == '__main__':
     predict_req()
